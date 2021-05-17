@@ -1,0 +1,10 @@
+name: test-github-actions
+on: [push]
+jobs:
+  check-docker-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: ls -lt && pwd
+      - run: sudo apt-get update
+      - run: docker -v
